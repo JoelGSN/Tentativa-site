@@ -1,0 +1,112 @@
+/* Remove margens padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Estrutura lado a lado */
+.layout-site {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Estilização do Menu Lateral */
+.barra-lateral {
+    width: 260px;
+    background-color: #1a1a2e;
+    /* Tom azul escuro moderno */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .logo {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #2e2e4f;
+    padding-bottom: 15px;
+} */
+
+/* Links do Menu */
+.menu-vertical ul {
+    list-style: none;
+    /* Remove os pontos da lista */
+}
+
+.menu-vertical li {
+    margin-bottom: 10px;
+}
+
+.menu-vertical a {
+    display: block;
+    color: #b3b3b3;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de passar o rato e link ativo */
+.menu-vertical a:hover,
+.menu-vertical a.ativo {
+    background-color: #0f3460;
+    /* Cor de destaque */
+    color: #fff;
+    padding-left: 20px;
+    /* Pequeno efeito de movimento */
+}
+
+/* Conteúdo Principal */
+.conteudo-principal {
+    padding: 30px;
+    margin: 0px;
+    width: 100vh;
+    /* background-color: #f7f9fc; */
+
+
+}
+
+#btncadcliente {
+    display: flex;
+    gap: 3vw;
+    margin-top: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    #mid{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.botaogeral {
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #0f3460;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+#cdclientes {
+    color: blue;
+    margin-top: 50px;
+    text-align: center;
+    list-style: none;
+
+    .inputcadcl {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        width: 30vw;
+        padding: 10px;
+        font-size: 1rem;
+
+    }
+}

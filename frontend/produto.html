@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Móveis</title>
+  <script src="js/app.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="layout-site">
+    <!-- Barra Lateral Esquerda com o Menu -->
+    <aside class="barra-lateral">
+      <!-- <div class="logo">
+        <h2>Meu Painel</h2>
+      </div> -->
+      <nav class="menu-vertical">
+        <ul>
+          <li><a href="index.html">🏠 Início</a></li>
+          <li><a href="clientes.html">👥 Clientes</a></li>
+          <li><a href="produto.html" class="ativo">📦 Produtos</a></li>
+          <li><a href="relatorio.html">📊 Relatorios</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+
+
+    <!-- Área do Conteúdo Principal -->
+    <main class="conteudo-principal">
+      <h1>Menu de Cadastro | Alterações</h1>
+      <form id="cdp">
+        <li><a>Cadastro de Produto</a></li>
+        <input class="inputcadcl" id='nomep' type="text">
+        <li><a>Tipo do Produto</a></li>
+        <input class="inputcadcl" id='tipo' type="text">
+        <li><a>Cor do Produto</a></li>
+        <input class="inputcadcl" id='cor' type="text">
+        <li><a>Preco</a></li>
+        <input class="inputcadcl" id='preco' type="text">
+        <li><a>Quantidade</a></li>
+        <input class="inputcadcl" id='quantidade' type="text">
+        <br>
+        <br>
+        <br>
+        <section id="btncadcliente">
+          <button type="button" class="botaogeral" onclick="pro()">Cadastrar Produto</button>
+        </section>
+      </form>
+
+
+      <form id="cv">
+        <h2>Compra de Produto | Venda de Produto</h2>
+        <li><a>ID</a></li>
+        <input class="inputcadcl" id='idcv' type="text">
+        <li><a>Quantidade</a></li>
+        <input class="inputcadcl" id='quantidadecv' type="text">
+        <br>
+        <br>
+        <br>
+        <section id="btncadproduto">
+          <button type="button" class="botaogeral" onclick="">Comprar Produto</button>
+          <button type="button" class="botaogeral" onclick="">Vender Produto</button>
+
+        </section>
+      </form>
+
+      <!-- <div id="dadospd"></div> -->
+
+      <div class="principal" id="lista-produto"></div>
+
+
+
+      <!-- <img id="logo" src="/frontend/loja_moveis/img/logo.jpg" alt='logo'> -->
+    </main>
+  </div>
+
+</body>
+
+</html>
