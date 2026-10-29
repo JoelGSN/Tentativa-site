@@ -107,6 +107,7 @@ function cli() {
                     }
                     clientes.push(cliente)
                     localStorage.setItem("clientes", JSON.stringify(clientes))
+                    alert("Cadastro Efetuado com Sucesso!!")
 
                 } else alert("Cliente já foi cadastrado!")
 
