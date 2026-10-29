@@ -5,36 +5,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja de Móveis</title>
-  <!-- <script src="script.js" defer></script> -->
-
+  <script src="js/app.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
   <div class="layout-site">
-    <!-- Barra Lateral Esquerda com o Menu -->
-    <aside class="barra-lateral">
-      <!-- <div class="logo">
-        <h2>Meu Painel</h2>
-      </div> -->
+    <aside class="barra-lateral-esquerda">
       <nav class="menu-vertical">
         <ul>
-          <li><a href="index.html">🏠 Início</a></li>
-          <li><a href="clientes.html">👥 Clientes</a></li>
-          <li><a href="produto.html" >📦 Produtos</a></li>
-          <li><a href="relatorio.html" class="ativo">📊 Relatorios</a></li>
+          <ul><a href="index.html">🏠 Início</a></ul>
+          <ul><a href="clientes.html">👥 Clientes</a></ul>
+          <ul><a href="produto.html">📦 Produtos</a></ul>
+          <ul><a href="relatorio.html" class="ativo">📊 Relatorios</a></ul>
         </ul>
       </nav>
     </aside>
-    
-    
-
     <!-- Área do Conteúdo Principal -->
-    <main class="conteudo-principal">
+    <main>
       <h1>Relatorios</h1>
       <!-- <img id="logo" src="/frontend/loja_moveis/img/logo.jpg" alt='logo'> -->
+      <section>
+        <!-- <aside class="barra-lateral-direita"> -->
+          <!-- <nav> -->
+            <ul>
+              <ul></ul><button type="button" class="botaorelat" onclick="cadcl()">Cadastro Cliente</button>
+              <button type="button" class="botaorelat" onclick="cadp()">Cadastro Produtos</button>
+              <button type="button" class="botaorelat" onclick="comp()">Compras</button>
+              <button type="button" class="botaorelat" onclick="vend()">Vendas</button>
+              <br>
+              <input type="text" id="filtro" placeholder="Clique no botão...">
+
+            </ul>
+          <!-- </nav> -->
+        <!-- </aside> -->
+
+      </section>
+      <br>
+      <div>
+        <div class="principal" id="listar"></div>
+
+      </div>
     </main>
+
   </div>
 
 </body>

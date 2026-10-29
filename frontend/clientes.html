@@ -10,57 +10,50 @@
 </head>
 
 <body>
-
   <div class="layout-site">
-    <aside class="barra-lateral">
-
+    <aside class="barra-lateral-esquerda">
       <nav class="menu-vertical">
         <ul>
-          <li><a href="index.html">🏠 Início</a></li>
-          <li><a href="clientes.html" class="ativo">👥 Clientes</a></li>
-          <li><a href="produto.html">📦 Produtos</a></li>
-          <li><a href="relatorio.html">📊 Relatorios</a></li>
+          <ul><a href="index.html">🏠 Início</a></ul>
+          <ul><a href="clientes.html" class="ativo">👥 Clientes</a></ul>
+          <ul><a href="produto.html">📦 Produtos</a></ul>
+          <ul><a href="relatorio.html">📊 Relatorios</a></ul>
         </ul>
       </nav>
     </aside>
 
 
 
-    <main class="conteudo-principal">
+    <main>
       <h1>Menu de Cadastro | Alterações de Clientes</h1>
-      <section id="cdccliente">
-      <form id="cdclientes">
-        <li><a>Cadastro de Cliente</a></li>
-        <input class="inputcadcl" id='nomec' type="text">
-        <li><a>CPF | CNPJ</a></li>
-        <input class="inputcadcl" id='cpf' type="num" minlength="11" maxlength="14">
-        <li><a>Endereço</a></li>
-        <input class="inputcadcl" id='rua' type="text">
-        <li><a>Numero</a></li>
-        <input class="inputcadcl" id='numero' type="text">
-        <!-- <li><a>Cidade</a></li>
-        <input class="inputcadcl" id='cidade' type="text"> -->
-        <li><a>UF</a></li>
-        <input class="inputcadcl" id='uf' type="text">
-        <br>
-        <br>
-        <br>
-        <section id="btncadcliente">
-          <button class="botaogeral" onclick="cli()">Salvar Cliente</button>
-          <section id="mid">
-            <button class="botaogeral" onclick="">Editar Cliente</button>
-
-            <button class="botaogeral" onclick="buscliente()">Buscar Cliente Por CPF | CNPJ</button>
-
-          </section>
-          <button class="botaogeral" onclick="">Deletar Cliente</button>
+      <section>
+        <form id="cdclientes">
+          <ul><a>Cadastro de Cliente</a></ul>
+          <input class="inputcadcl" id='nomec' type="text">
+          <ul><a>CPF | CNPJ</a></ul>
+          <input class="inputcadcl" id='cpf' type="num" minlength="11" maxlength="14">
+          <ul><a>Endereço</a></ul>
+          <input class="inputcadcl" id='rua' type="text">
+          <ul><a>Numero</a></ul>
+          <input class="inputcadcl" id='numero' type="text">
+          <ul><a>UF</a></ul>
+          <input class="inputcadcl" id='uf' type="text">
           <br>
-
-
-        </section>
-      </form>
+          <br>
+          <br>
+          <section id="btncadcliente">
+            <button type="button" class="botaogeral" onclick="cli()">Salvar Cliente</button>
+            <section id="mid">
+              <button type="button" class="botaogeral" onclick="buscliente()">Buscar Cliente Por CPF | CNPJ</button>
+              <button type="button" class="botaogeral" onclick="alterarcl()">Editar Cliente</button>
+            </section>
+            <button type="button" class="botaogeral" onclick="clidelete()">Deletar Cliente</button>
+            <br>
+          </section>
+        </form>
       </section>
-            <div class="principal" id="lista-cliente"></div>
+
+      <div class="principal" id="lista-cliente"></div>
 
     </main>
   </div>

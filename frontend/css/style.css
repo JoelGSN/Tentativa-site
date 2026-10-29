@@ -1,3 +1,13 @@
+root{
+    --cor_let_form: blue; /* cor das letras dos forms*/
+    --cor_let_barra: #fff; /* cor das letras da barra de menu*/
+    --bg_barra: #1a1a2e; /*cor background menu*/
+
+}
+
+
+
+
 /* Remove margens padrão do navegador */
 * {
     margin: 0;
@@ -6,7 +16,9 @@
     font-family: Arial, sans-serif;
 }
 
-
+h1{
+    text-align: center;
+}
 
 /* Estrutura lado a lado */
 .layout-site {
@@ -15,13 +27,24 @@
 }
 
 /* Estilização do Menu Lateral */
-.barra-lateral {
-    width: 260px;
+.barra-lateral-esquerda {
+    width: 150px;
     background-color: #1a1a2e;
     /* Tom azul escuro moderno */
     color: #fff;
     padding: 20px;
     display: flex;
+    /* flex-direction: column; */
+}
+
+.barra-lateral-direita {
+    width: 150px;
+    background-color: #1a1a2e;
+    /* Tom azul escuro moderno */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
     flex-direction: column;
 }
 
@@ -63,14 +86,47 @@
 }
 
 /* Conteúdo Principal */
-.conteudo-principal {
+main {
     padding: 30px;
     margin: 0px;
     width: 100vh;
-    /* background-color: #f7f9fc; */
+    background-color: #f7f9fc;
 
 
 }
+
+
+
+.botaogeral {
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #0f3460;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.botaorelat {
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #0f3460;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+
+/*clientes inicio*/
+
+#cdclientes {
+    color: blue;
+    margin-top: 50px;
+    text-align: center;
+    list-style: none;
 
 #btncadcliente {
     display: flex;
@@ -84,29 +140,41 @@
     }
 }
 
-.botaogeral {
-    padding: 12px 25px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    background-color: #0f3460;
-    color: #fff;
-    transition: background-color 0.3s;
 }
 
-#cdclientes {
+.inputcadcl {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    width: 30vw;
+    padding: 10px;
+    font-size: 1rem;
+
+}
+
+/*clientes fim*/
+
+
+/*produtos inicio*/
+
+
+#cdp {
     color: blue;
     margin-top: 50px;
     text-align: center;
     list-style: none;
 
-    .inputcadcl {
-        margin-top: 7px;
-        margin-bottom: 7px;
-        width: 30vw;
-        padding: 10px;
-        font-size: 1rem;
 
-    }
+}
+
+/*produtos fim*/
+
+
+
+
+#cv {
+    color: blue;
+    margin-top: 50px;
+    text-align: center;
+    list-style: none;
+
 }

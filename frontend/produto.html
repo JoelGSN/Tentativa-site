@@ -10,13 +10,8 @@
 </head>
 
 <body>
-
   <div class="layout-site">
-    <!-- Barra Lateral Esquerda com o Menu -->
-    <aside class="barra-lateral">
-      <!-- <div class="logo">
-        <h2>Meu Painel</h2>
-      </div> -->
+    <aside class="barra-lateral-esquerda">
       <nav class="menu-vertical">
         <ul>
           <li><a href="index.html">🏠 Início</a></li>
@@ -29,43 +24,47 @@
 
 
 
-    <!-- Área do Conteúdo Principal -->
-    <main class="conteudo-principal">
+    <main>
       <h1>Menu de Cadastro | Alterações</h1>
       <form id="cdp">
-        <li><a>Cadastro de Produto</a></li>
-        <input class="inputcadcl" id='nomep' type="text">
-        <li><a>Tipo do Produto</a></li>
-        <input class="inputcadcl" id='tipo' type="text">
-        <li><a>Cor do Produto</a></li>
-        <input class="inputcadcl" id='cor' type="text">
-        <li><a>Preco</a></li>
-        <input class="inputcadcl" id='preco' type="text">
-        <li><a>Quantidade</a></li>
-        <input class="inputcadcl" id='quantidade' type="text">
-        <br>
-        <br>
-        <br>
-        <section id="btncadcliente">
-          <button type="button" class="botaogeral" onclick="pro()">Cadastrar Produto</button>
-        </section>
+        <ul>
+          <li><a>Cadastro de Produto</a></li>
+          <input class="inputcadcl" id='nomep' type="text">
+          <li><a>Tipo do Produto</a></li>
+          <input class="inputcadcl" id='tipo' type="text">
+          <li><a>Cor do Produto</a></li>
+          <input class="inputcadcl" id='cor' type="text">
+          <li><a>Preco</a></li>
+          <input class="inputcadcl" id='preco' type="text">
+          <li><a>Quantidade</a></li>
+          <input class="inputcadcl" id='quantidade' type="text">
+          <br>
+          <br>
+          <br>
+          <section id="btncadcliente">
+            <button type="button" class="botaogeral" onclick="pro()">Cadastrar Produto</button>
+          </section>
+        </ul>
       </form>
 
 
       <form id="cv">
         <h2>Compra de Produto | Venda de Produto</h2>
-        <li><a>ID</a></li>
-        <input class="inputcadcl" id='idcv' type="text">
-        <li><a>Quantidade</a></li>
-        <input class="inputcadcl" id='quantidadecv' type="text">
         <br>
-        <br>
-        <br>
-        <section id="btncadproduto">
-          <button type="button" class="botaogeral" onclick="">Comprar Produto</button>
-          <button type="button" class="botaogeral" onclick="">Vender Produto</button>
-
-        </section>
+        <ul>
+          <ul><a>Nome do Produto</a></ul>
+          <input class="inputcadcl" id='nomecv' type="text">
+          <ul><a>Quantidade</a></ul>
+          <input class="inputcadcl" id='quantidadecv' type="number">
+          <br>
+          <br>
+          <br>
+          <section id="btncadproduto">
+            <button type="button" class="botaogeral" onclick="comprapd()">Comprar Produto</button>
+            <button type="button" class="botaogeral" onclick="venderpd()">Vender Produto</button>
+            
+          </section>
+        </ul>
       </form>
 
       <!-- <div id="dadospd"></div> -->
