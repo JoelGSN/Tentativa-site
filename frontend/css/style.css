@@ -1,7 +1,22 @@
-root{
-    --cor_let_form: blue; /* cor das letras dos forms*/
-    --cor_let_barra: #fff; /* cor das letras da barra de menu*/
-    --bg_barra: #1a1a2e; /*cor background menu*/
+:root {
+    --cor_let_form: blue;
+    /* cor das letras dos forms*/
+    --cor_let_barra: #fff;
+    /* cor das letras da barra de menu*/
+    --bg_barra: #1a1a2e;
+    --bg_divs: #fae49b;
+    /*cor background menu*/
+    --bg_campos: #f8e4c6;
+    --input_bg: #000000;
+    --border-style-solid: solid;
+    --border_col: black;
+    /* --border-color-primary: #050000; */
+    --cor_da_borda: #000000;
+
+
+
+
+
 
 }
 
@@ -12,58 +27,34 @@ root{
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
     font-family: Arial, sans-serif;
+
+    
 }
 
-h1{
-    text-align: center;
-}
-
-/* Estrutura lado a lado */
 .layout-site {
     display: flex;
     min-height: 100vh;
+    min-width: 100%;
 }
 
-/* Estilização do Menu Lateral */
-.barra-lateral-esquerda {
-    width: 150px;
+.barra-lateral{
+    width: 250px;
     background-color: #1a1a2e;
-    /* Tom azul escuro moderno */
     color: #fff;
     padding: 20px;
     display: flex;
-    /* flex-direction: column; */
+    margin-right: 1vw;
 }
 
-.barra-lateral-direita {
-    width: 150px;
-    background-color: #1a1a2e;
-    /* Tom azul escuro moderno */
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-}
 
-/* .logo {
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 1.2rem;
-    border-bottom: 1px solid #2e2e4f;
-    padding-bottom: 15px;
-} */
-
-/* Links do Menu */
-.menu-vertical ul {
+/* .menu-vertical{
     list-style: none;
-    /* Remove os pontos da lista */
-}
+} */
 
 .menu-vertical li {
     margin-bottom: 10px;
+    list-style: none;
 }
 
 .menu-vertical a {
@@ -73,26 +64,45 @@ h1{
     padding: 12px 15px;
     border-radius: 6px;
     transition: all 0.3s ease;
+    
 }
 
-/* Efeito de passar o rato e link ativo */
-.menu-vertical a:hover,
-.menu-vertical a.ativo {
+.menu-vertical a:hover{
     background-color: #0f3460;
-    /* Cor de destaque */
     color: #fff;
     padding-left: 20px;
-    /* Pequeno efeito de movimento */
 }
+
+.menu-vertical a.ativo{
+    font-size: larger;
+    background-color: #3495f7;
+    color: #fff;
+    padding-left: 20px;
+}
+
+
+
+h1 {
+    text-align: center;
+}
+
+
+
+body{
+    width: 100%;
+}
+
+
+
+
 
 /* Conteúdo Principal */
 main {
-    padding: 30px;
+    padding: 0px;
     margin: 0px;
-    width: 100vh;
+    width: 80%;
     background-color: #f7f9fc;
-
-
+    text-align: center;
 }
 
 
@@ -108,6 +118,17 @@ main {
     transition: background-color 0.3s;
 }
 
+.botaogeral:hover {
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #921818;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
 .botaorelat {
     padding: 12px 25px;
     font-size: 1rem;
@@ -119,28 +140,47 @@ main {
     transition: background-color 0.3s;
 }
 
+.botaorelat:hover {
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #921818;
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
 
 /*clientes inicio*/
 
 #cdclientes {
     color: blue;
+    font-weight: bolder;
+    font-size: 1.5rem;
     margin-top: 50px;
     text-align: center;
     list-style: none;
+    background-color: var(--bg_divs);
+    border: var(--border-style-solid);
+    border-width: 4px;
+    width: 100%;
 
-#btncadcliente {
-    display: flex;
-    gap: 3vw;
-    margin-top: 20px;
-    justify-content: center;
-    margin-bottom: 30px;
-    #mid{
+    #btncadcliente {
         display: flex;
-        flex-direction: column;
+        gap: 3vw;
+        margin-top: 20px;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        #mid {
+            display: flex;
+            flex-direction: column;
+        }
     }
-}
 
 }
+
 
 .inputcadcl {
     margin-top: 7px;
@@ -157,24 +197,47 @@ main {
 /*produtos inicio*/
 
 
-#cdp {
+#form_cadp {
     color: blue;
     margin-top: 50px;
     text-align: center;
     list-style: none;
+    background-color: var(--bg_divs);
+    border: var(--border-style-solid);
 
 
 }
 
+
 /*produtos fim*/
+/* #filtro{
+width: 0.1px;
+} */
 
 
 
 
-#cv {
+
+#compravenda {
     color: blue;
     margin-top: 50px;
     text-align: center;
     list-style: none;
+    background-color: var(--bg_divs);
+    border: var(--border-style-solid);
 
+}
+
+#div_relatorio {
+    background-color: var(--bg_divs);
+    border: var(--border-style-solid);
+    text-align: center;
+    color: blue;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+#txt_rel{
+    font-size: 2rem;
+    color: red;
 }

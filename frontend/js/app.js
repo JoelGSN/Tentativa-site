@@ -22,6 +22,12 @@ const qtdcv = document.getElementById("quantidadecv")
 //\\
 const campo = document.getElementById('filtro');
 const dadosrl = document.getElementById("listar")
+const dadosts = document.getElementById("teste")
+//\\
+//\\
+const vendas = JSON.parse(localStorage.getItem("vendas")) || []
+const nomev = document.getElementById("nomecv")
+const quantidadev = document.getElementById("quantidadecv")
 
 
 //ABA DE RELATÓRIOS INICIO
@@ -50,11 +56,13 @@ function vend() {
 
 //PARTE DO INNER INICIO
 
+
+
 function relatorio() {
     if (campo.value === "cadcl") {
 
         function listarcli() {
-            dadosrl.innerHTML = '<== Cadastrados ==>'
+            dadosrl.innerHTML = '\n\n'
             for (let cliente of clientes) {
                 dadosrl.innerHTML += `<p>Nome do Cliente: ${cliente.nome}   ||   CPF: ${cliente.cpf}</p>`
             }
@@ -63,14 +71,25 @@ function relatorio() {
     } else {
         if (campo.value === "cadp") {
             function listarpdi() {
-                dadosrl.innerHTML = '<== Cadastrados ==>'
+                dadosrl.innerHTML = '\n\n'
                 for (let produto of produtos) {
                     dadosrl.innerHTML += `<p>Nome do Produto: ${produto.nome}   ||   Quantidade: ${produto.quantidade}</p>`
                 }
             }
             listarpdi()
         } else {
-            dadosrl.innerHTML = '<p>Selecione uma opção acima</p>';
+            if (campo.value === "venda") {
+                function listarvd() {
+                    dadosrl.innerHTML = '\n\n'
+                    for (let venda of vendas) {
+                        dadosrl.innerHTML += `<p>Nome do Produto: ${venda.nome}   ||   Quantidade: ${venda.quantidade}</p>`
+                    }
+                }
+                listarvd()
+            } else {
+
+                dadosrl.innerHTML = '<p>Selecione uma opção acima</p>';
+            }
         }
     }
 }
@@ -135,7 +154,7 @@ function listarcl() {
 
 function pro() {
 
-    console.log("testando")
+    // console.log("testando")
 
     if (nomep.value.trim() && tipo.value.trim() && cor.value.trim() && preco.value.trim() && quantidade.value.trim()) {
         if (preco.value > 0) {
@@ -213,11 +232,11 @@ function buscliente() {
         // numerobuscarcliente.value = cliente.numero
         // ufbuscarcliente.value = cliente.uf
 
-        nomec.value = cliente.nome;
-        cpf.value = cliente.cpf;
-        rua.value = cliente.rua;
-        numero.value = cliente.numero;
-        uf.value = cliente.uf;
+        nomec.value = cliente.nome
+        cpf.value = cliente.cpf
+        rua.value = cliente.rua
+        numero.value = cliente.numero
+        uf.value = cliente.uf
 
     } else alert("Cliente Não encontrado")
 }
@@ -227,19 +246,22 @@ function alterarcl() {
     let existe = false;
     for (let cliente of clientes) {
         if (cliente.cpf === cpf.value) {
-            existe = true;
+            existe = true
 
-            cliente.nome = nomec.value;
-            cliente.rua = rua.value;
-            cliente.numero = numero.value;
-            cliente.uf = uf.value;
+            cliente.nome = nomec.value
+            cliente.rua = rua.value
+            cliente.numero = numero.value
+            cliente.uf = uf.value
 
             break;
         }
     }
-    localStorage.setItem("clientes", JSON.stringify(clientes));
-    alert("Alterado");
+    localStorage.setItem("clientes", JSON.stringify(clientes))
+    // alert("Alteração do Cliente "+cliente.nome+" Efetuada")
 }
+
+
+//--não consegui fazer
 
 function clidelete() {
     // 1. Atribui o resultado direto à variável 'i' e pega o .value do input
@@ -262,6 +284,8 @@ function clidelete() {
 }
 
 
+
+
 //Movimentação Clientes fim
 
 
@@ -270,25 +294,37 @@ function clidelete() {
 
 function comprapd() {
 
-    let existe = false;
+    let existe = false
     let vlrsoma = Number(qtdcv.value)
-    let qtd_novo = 0;
+    let qtd_novo = 0
 
     for (let produto of produtos) {
         if (produto.nome === nmcv.value) {
-            existe = true;
+            existe = true
             produto.quantidade = Number(produto.quantidade) + vlrsoma
-            qtd_novo = produto.quantidade;
-            break;
+            qtd_novo = produto.quantidade
+            break
         }
     }
     if (existe) {
-        localStorage.setItem("produtos", JSON.stringify(produtos));
+
+        const cliente = {
+            nome: nomec.value,
+            cpf: cpf.value,
+            rua: rua.value,
+            numero: numero.value,
+            uf: uf.value
+        }
+        clientes.push(cliente)
+        localStorage.setItem("clientes", JSON.stringify(clientes))
+
+
+        localStorage.setItem("produtos", JSON.stringify(produtos))
         // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
-        alert("Compra Executada!! Novo Estoque: " + qtd_novo);
+        alert("Compra Executada!! Novo Estoque: " + qtd_novo)
 
     } else {
-        alert("Produto não encontrado!");
+        alert("Produto não encontrado!")
     }
 
 }
@@ -311,6 +347,29 @@ function venderpd() {
         }
     }
     if (existe) {
+
+
+        const venda = {
+
+            nome: nomev.value,
+            quantidade: quantidadev.value
+
+
+
+
+
+        }
+        vendas.push(venda)
+        localStorage.setItem("vendas", JSON.stringify(vendas))
+
+
+
+
+
+
+
+
+
         localStorage.setItem("produtos", JSON.stringify(produtos));
         // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
         alert("Venda Executada!! Novo Estoque: " + qtd_novo);

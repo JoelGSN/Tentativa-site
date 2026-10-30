@@ -11,13 +11,13 @@
 
 <body>
   <div class="layout-site">
-    <aside class="barra-lateral-esquerda">
+    <aside class="barra-lateral">
       <nav class="menu-vertical">
         <ul>
-          <ul><a href="index.html">🏠 Início</a></ul>
-          <ul><a href="clientes.html" class="ativo">👥 Clientes</a></ul>
-          <ul><a href="produto.html">📦 Produtos</a></ul>
-          <ul><a href="relatorio.html">📊 Relatorios</a></ul>
+          <li><a href="index.html">🏠 Início</a></li>
+          <li><a href="clientes.html" class="ativo">👥 Clientes</a></li>
+          <li><a href="produto.html">📦 Produtos</a></li>
+          <li><a href="relatorio.html">📊 Relatorios</a></li>
         </ul>
       </nav>
     </aside>
@@ -26,17 +26,16 @@
 
     <main>
       <h1>Menu de Cadastro | Alterações de Clientes</h1>
-      <section>
         <form id="cdclientes">
-          <ul><a>Cadastro de Cliente</a></ul>
+          <li><a>Cadastro de Cliente</a></li>
           <input class="inputcadcl" id='nomec' type="text">
-          <ul><a>CPF | CNPJ</a></ul>
+          <li><a>CPF | CNPJ</a></li>
           <input class="inputcadcl" id='cpf' type="num" minlength="11" maxlength="14">
-          <ul><a>Endereço</a></ul>
+          <li><a>Endereço</a></li>
           <input class="inputcadcl" id='rua' type="text">
-          <ul><a>Numero</a></ul>
+          <li><a>Numero</a></li>
           <input class="inputcadcl" id='numero' type="text">
-          <ul><a>UF</a></ul>
+          <li><a>UF</a></li>
           <input class="inputcadcl" id='uf' type="text">
           <br>
           <br>
@@ -51,7 +50,6 @@
             <br>
           </section>
         </form>
-      </section>
 
       <div class="principal" id="lista-cliente"></div>
 

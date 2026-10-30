@@ -11,7 +11,7 @@
 
 <body>
   <div class="layout-site">
-    <aside class="barra-lateral-esquerda">
+    <aside class="barra-lateral">
       <nav class="menu-vertical">
         <ul>
           <li><a href="index.html">🏠 Início</a></li>
@@ -26,8 +26,8 @@
 
     <main>
       <h1>Menu de Cadastro | Alterações</h1>
-      <form id="cdp">
-        <ul>
+      <form id="form_cadp">
+        
           <li><a>Cadastro de Produto</a></li>
           <input class="inputcadcl" id='nomep' type="text">
           <li><a>Tipo do Produto</a></li>
@@ -44,28 +44,25 @@
           <section id="btncadcliente">
             <button type="button" class="botaogeral" onclick="pro()">Cadastrar Produto</button>
           </section>
-        </ul>
       </form>
 
 
-      <form id="cv">
+      <form id="compravenda">
         <h2>Compra de Produto | Venda de Produto</h2>
         <br>
-        <ul>
-          <ul><a>Nome do Produto</a></ul>
+          <li><a>Nome do Produto</a></li>
           <input class="inputcadcl" id='nomecv' type="text">
-          <ul><a>Quantidade</a></ul>
+          <li><a>Quantidade</a></li>
           <input class="inputcadcl" id='quantidadecv' type="number">
           <br>
           <br>
           <br>
-          <section id="btncadproduto">
+          <section>
             <button type="button" class="botaogeral" onclick="comprapd()">Comprar Produto</button>
             <button type="button" class="botaogeral" onclick="venderpd()">Vender Produto</button>
-            
           </section>
-        </ul>
       </form>
+
 
       <!-- <div id="dadospd"></div> -->
 

@@ -11,13 +11,13 @@
 
 <body>
   <div class="layout-site">
-    <aside class="barra-lateral-esquerda">
+    <aside class="barra-lateral">
       <nav class="menu-vertical">
         <ul>
-          <ul><a href="index.html">🏠 Início</a></ul>
-          <ul><a href="clientes.html">👥 Clientes</a></ul>
-          <ul><a href="produto.html">📦 Produtos</a></ul>
-          <ul><a href="relatorio.html" class="ativo">📊 Relatorios</a></ul>
+          <li><a href="index.html">🏠 Início</a></li>
+          <li><a href="clientes.html">👥 Clientes</a></li>
+          <li><a href="produto.html">📦 Produtos</a></li>
+          <li><a href="relatorio.html" class="ativo">📊 Relatorios</a></li>
         </ul>
       </nav>
     </aside>
@@ -29,9 +29,9 @@
         <!-- <aside class="barra-lateral-direita"> -->
           <!-- <nav> -->
             <ul>
-              <ul></ul><button type="button" class="botaorelat" onclick="cadcl()">Cadastro Cliente</button>
+              <button type="button" class="botaorelat" onclick="cadcl()">Cadastro Cliente</button>
               <button type="button" class="botaorelat" onclick="cadp()">Cadastro Produtos</button>
-              <button type="button" class="botaorelat" onclick="comp()">Compras</button>
+              <!-- <button type="button" class="botaorelat" onclick="comp()">Compras</button> -->
               <button type="button" class="botaorelat" onclick="vend()">Vendas</button>
               <br>
               <input type="text" id="filtro" placeholder="Clique no botão...">
@@ -42,7 +42,9 @@
 
       </section>
       <br>
-      <div>
+      <div id="div_relatorio">
+        <p id="txt_rel">{== Relatório de Itens Cadastrados ==}</p>
+        <br>
         <div class="principal" id="listar"></div>
 
       </div>
