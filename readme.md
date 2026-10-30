@@ -24,7 +24,8 @@ loja de moveis
 
 
 
-
+#validar números negativos de venda
+#validar quantidade em estoque para vender
 
 
 <!-- 

@@ -28,13 +28,8 @@ const dadosts = document.getElementById("teste")
 const vendas = JSON.parse(localStorage.getItem("vendas")) || []
 const nomev = document.getElementById("nomecv")
 const quantidadev = document.getElementById("quantidadecv")
-
-
 //ABA DE RELATÓRIOS INICIO
-
-
 //PARTE DOS BOTÕES INICIO
-
 function cadcl() {
     campo.value = "cadcl";
     relatorio();
@@ -51,15 +46,9 @@ function vend() {
     campo.value = "venda";
     relatorio();
 }
-
 //PARTE DOS BOTÕES FIM
-
 //PARTE DO INNER INICIO
-
-
-
 function relatorio() {
-    
     if (campo.value === "cadcl") {
         let i = 1
         function listarcli() {
@@ -75,7 +64,7 @@ function relatorio() {
             function listarpdi() {
                 dadosrl.innerHTML = 'Relatório de Cadastro de Produtos'
                 for (let produto of produtos) {
-                    dadosrl.innerHTML += `<p><br>${i++}º => Nome do Produto: ${produto.nome}   ||   Quantidade: ${produto.quantidade}</p>`
+                    dadosrl.innerHTML += `<p><br>${i++}º => Nome do Produto: ${produto.nome}   ||   Quantidade: ${produto.quantidade}  || Valor Produto: ${produto.preco}</p>`
                 }
             }
             listarpdi()
@@ -90,27 +79,16 @@ function relatorio() {
                 }
                 listarvd()
             } else {
-
                 dadosrl.innerHTML = '<p>Selecione uma opção nos botões acima</p>';
             }
         }
     }
 }
-
 relatorio()
 //PARTE DO INNER FIM
-
-
-
 //ABA DE RELATÓRIOS FIM
-
-
-
 //ABA DE CLIENTES INICIO
-
 function cli() {
-
-
     if (nomec.value.trim() && cpf.value.trim() && rua.value.trim() && numero.value.trim() && uf.value.trim) {
         if (/^[A-Za-zÁ-ý\s]+$/.test(nomec.value)) {
             if (/^\d{11}$/.test(cpf.value)) {
@@ -130,39 +108,25 @@ function cli() {
                     clientes.push(cliente)
                     localStorage.setItem("clientes", JSON.stringify(clientes))
                     alert("Cadastro Efetuado com Sucesso!!")
-
                 } else alert("Cliente já foi cadastrado!")
-
             } else alert("deve conter apenas 11 digitos caso for CPF ou 14 digitos caso for CNPJ")
-
         } else alert("Nome so Aceita Letras , acentos e Espaço!")
-
     } else alert("Preencha todos os campos!")
     listar()
 }
-
-
 // function listarcl() {
 //     dadoscl.innerHTML = '<== Cadastrados ==>'
 //     for (let cliente of clientes) {
 //         dadoscl.innerHTML += `<p>Nome: ${cliente.nome} || CPF: ${cliente.cpf}</p>`
 //     }
 // }
-
-
 //ABA DE CLIENTES FIM
-
 //ABA DE PRODUTOS INICIO
-
-
 function pro() {
-
     // console.log("testando")
-
     if (nomep.value.trim() && tipo.value.trim() && cor.value.trim() && preco.value.trim() && quantidade.value.trim()) {
         if (preco.value > 0) {
             if (quantidade.value >= 0) {
-
                 let existe = false
                 for (let p of produtos) {
                     if (p.nome == nomep.value)
@@ -179,44 +143,29 @@ function pro() {
                     produtos.push(produto)
                     localStorage.setItem("produtos", JSON.stringify(produtos))
                     alert("Produto Cadastrado com sucesso!")
-
                 } else alert("Produto ja Cadastrado!")
-
             } else alert("Quantidade não pode ser negativa")
-
         } else alert("Valor não pode ser 0 ou negativo")
-
     } else alert("Preencha todos os campos do produto")
-    listar()
+    // listar()
 }
-
-function listarpd() {
-    dadospd.innerHTML = '<== Cadastrados ==>'
-    for (let produto of produtos) {
-        dadospd.innerHTML += `<p>Produto: ${produto.nome} || Quantidade: ${produto.quantidade}</p>`
-    }
-}
-
-
+// function listarpd() {
+//     dadospd.innerHTML = '<== Cadastrados ==>'
+//     for (let produto of produtos) {
+//         dadospd.innerHTML += `<p>Produto: ${produto.nome} || Quantidade: ${produto.quantidade}</p>`
+//     }
+// }
 //ABA DE PRODUTOS FIM
-
-
-
 //FUNÇÕES GERAIS INICIO
-
-function listar() {
-    if (uf) {
-        listarcl()
-    } else {
-        listarpd()
-    }
-}
-listar();
-
-
-
+// function listar() {
+//     if (uf) {
+//         listarcl()
+//     } else {
+//         listarpd()
+//     }
+// }
+// listar();
 //Movimentação Clientes inicio
-
 function buscliente() {
     let existe = false
     let cliente = null
@@ -229,130 +178,100 @@ function buscliente() {
     }
     if (existe) {
         alert("Cliente " + cliente.nome + " Localizado")
-        // nomebuscarcliente.value = cliente.nome
-        // ruabuscarcliente.value = cliente.rua
-        // bairrobuscarcliente.value = cliente.bairro
-        // numerobuscarcliente.value = cliente.numero
-        // ufbuscarcliente.value = cliente.uf
-
         nomec.value = cliente.nome
         cpf.value = cliente.cpf
         rua.value = cliente.rua
         numero.value = cliente.numero
         uf.value = cliente.uf
-
     } else alert("Cliente Não encontrado")
 }
-
 function alterarcl() {
-
     let existe = false;
     for (let cliente of clientes) {
         if (cliente.cpf === cpf.value) {
             existe = true
-
             cliente.nome = nomec.value
             cliente.rua = rua.value
             cliente.numero = numero.value
             cliente.uf = uf.value
-
             break;
         }
     }
     localStorage.setItem("clientes", JSON.stringify(clientes))
-    // alert("Alteração do Cliente "+cliente.nome+" Efetuada")
+    alert("Alteração do Cliente "+nomec.value+" Efetuada Com Sucesso!!!")
+    
 }
-
-//--não consegui fazer
-
 function clidelete() {
-    // 1. Atribui o resultado direto à variável 'i' e pega o .value do input
     let ind = clientes.findIndex(cliente => cliente.cpf === cpf.value);
-    // console.log("primeiro " + ind)
-    // 2. Verifica se encontrou (findIndex retorna -1 se não achar)
     if (ind !== -1) {
-        // 3. Remove apenas 1 item na posição 'i'
-        // console.log("segundo " + ind)
         clientes.splice(ind, 1);
-
-        // 4. Salva a lista atualizada e atualiza a tela
         localStorage.setItem("clientes", JSON.stringify(clientes));
         alert("Cliente excluído com sucesso!");
     } else {
         alert("Cliente não encontrado!");
     }
-
     listar();
 }
-
 //Movimentação Clientes fim
-
-
 //Movimentação Produtos inicio
-
-
 function comprapd() {
-
     let existe = false
     let vlrsoma = Number(qtdcv.value)
     let qtd_novo = 0
-
-    for (let produto of produtos) {
-        if (produto.nome === nmcv.value) {
-            existe = true
-            produto.quantidade = Number(produto.quantidade) + vlrsoma
-            qtd_novo = produto.quantidade
-            break
+    if (vlrsoma > 0) {
+        for (let produto of produtos) {
+            if (produto.nome === nmcv.value) {
+                existe = true
+                produto.quantidade = Number(produto.quantidade) + vlrsoma
+                qtd_novo = produto.quantidade
+                break
+            }
         }
-    }
-    if (existe) {
-
-        localStorage.setItem("produtos", JSON.stringify(produtos))
-        // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
-        alert("Compra Executada!! Novo Estoque: " + qtd_novo)
-
+        if (existe) {
+            localStorage.setItem("produtos", JSON.stringify(produtos))
+            // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
+            alert("Compra Executada!! Novo Estoque: " + qtd_novo)
+        } else {
+            alert("Produto não encontrado!")
+        }
     } else {
-        alert("Produto não encontrado!")
+        alert("Impossível Comprar Valor negativo!!")
     }
-
 }
-
-
-
-
 function venderpd() {
     let existe = false;
     let vlrsoma = qtdcv.value
     let qtd_novo = 0;
-    for (let produto of produtos) {
-        if (produto.nome === nmcv.value) {
-            existe = true;
-            produto.quantidade = produto.quantidade - vlrsoma
-            qtd_novo = produto.quantidade;
-            break;
+    if (vlrsoma > 0) {
+        if (produto.quantidade > vlrsoma) {
+            for (let produto of produtos) {
+                if (produto.nome === nmcv.value) {
+                    existe = true;
+                    produto.quantidade = produto.quantidade - vlrsoma
+                    qtd_novo = produto.quantidade;
+                    break;
+                    //
+                }
+            }
+            if (existe) {
+                const venda = {
+                    nome: nomev.value,
+                    quantidade: quantidadev.value
+                }
+                vendas.push(venda)
+                localStorage.setItem("vendas", JSON.stringify(vendas))
+                localStorage.setItem("produtos", JSON.stringify(produtos));
+                // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
+                alert("Venda Executada!! Novo Estoque: " + qtd_novo);
+            } else {
+                alert("Produto não encontrado!");
+            }
+        } else {
+            alert("Quantidade Indisponível para venda")
         }
-    }
-    if (existe) {
-        const venda = {
-            nome: nomev.value,
-            quantidade: quantidadev.value
-        }
-        vendas.push(venda)
-        localStorage.setItem("vendas", JSON.stringify(vendas))
-        localStorage.setItem("produtos", JSON.stringify(produtos));
-        // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
-        alert("Venda Executada!! Novo Estoque: " + qtd_novo);
     } else {
-        alert("Produto não encontrado!");
+        alert("Impossível Vender Valor negativo!")
     }
 }
-
-
 //Movimentação Produtos FIM
-
-
-
-
-
 //FUNÇÕES GERAIS FIM
-
