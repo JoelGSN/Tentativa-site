@@ -142,12 +142,12 @@ function cli() {
 }
 
 
-function listarcl() {
-    dadoscl.innerHTML = '<== Cadastrados ==>'
-    for (let cliente of clientes) {
-        dadoscl.innerHTML += `<p>Nome: ${cliente.nome} || CPF: ${cliente.cpf}</p>`
-    }
-}
+// function listarcl() {
+//     dadoscl.innerHTML = '<== Cadastrados ==>'
+//     for (let cliente of clientes) {
+//         dadoscl.innerHTML += `<p>Nome: ${cliente.nome} || CPF: ${cliente.cpf}</p>`
+//     }
+// }
 
 
 //ABA DE CLIENTES FIM
@@ -263,17 +263,16 @@ function alterarcl() {
     // alert("Alteração do Cliente "+cliente.nome+" Efetuada")
 }
 
-
 //--não consegui fazer
 
 function clidelete() {
     // 1. Atribui o resultado direto à variável 'i' e pega o .value do input
     let ind = clientes.findIndex(cliente => cliente.cpf === cpf.value);
-    console.log("primeiro " + ind)
+    // console.log("primeiro " + ind)
     // 2. Verifica se encontrou (findIndex retorna -1 se não achar)
     if (ind !== -1) {
         // 3. Remove apenas 1 item na posição 'i'
-        console.log("segundo " + ind)
+        // console.log("segundo " + ind)
         clientes.splice(ind, 1);
 
         // 4. Salva a lista atualizada e atualiza a tela
@@ -285,9 +284,6 @@ function clidelete() {
 
     listar();
 }
-
-
-
 
 //Movimentação Clientes fim
 
@@ -311,17 +307,6 @@ function comprapd() {
     }
     if (existe) {
 
-        const cliente = {
-            nome: nomec.value,
-            cpf: cpf.value,
-            rua: rua.value,
-            numero: numero.value,
-            uf: uf.value
-        }
-        clientes.push(cliente)
-        localStorage.setItem("clientes", JSON.stringify(clientes))
-
-
         localStorage.setItem("produtos", JSON.stringify(produtos))
         // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
         alert("Compra Executada!! Novo Estoque: " + qtd_novo)
@@ -336,11 +321,9 @@ function comprapd() {
 
 
 function venderpd() {
-
     let existe = false;
     let vlrsoma = qtdcv.value
     let qtd_novo = 0;
-
     for (let produto of produtos) {
         if (produto.nome === nmcv.value) {
             existe = true;
@@ -350,37 +333,18 @@ function venderpd() {
         }
     }
     if (existe) {
-
-
         const venda = {
-
             nome: nomev.value,
             quantidade: quantidadev.value
-
-
-
-
-
         }
         vendas.push(venda)
         localStorage.setItem("vendas", JSON.stringify(vendas))
-
-
-
-
-
-
-
-
-
         localStorage.setItem("produtos", JSON.stringify(produtos));
         // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
         alert("Venda Executada!! Novo Estoque: " + qtd_novo);
-
     } else {
         alert("Produto não encontrado!");
     }
-
 }
 
 
