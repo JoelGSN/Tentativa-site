@@ -4,7 +4,7 @@
     --cor_let_barra: #fff;
     /* cor das letras da barra de menu*/
     --bg_barra: #1a1a2e;
-    --bg_divs: #fae49b;
+    --bg_divs: #d4e4f7;
     /*cor background menu*/
     --bg_campos: #f8e4c6;
     --input_bg: #000000;
@@ -13,23 +13,12 @@
     /* --border-color-primary: #050000; */
     --cor_da_borda: #000000;
 
-
-
-
-
-
 }
 
-
-
-
-/* Remove margens padrão do navegador */
 * {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-
-    
 }
 
 .layout-site {
@@ -38,7 +27,7 @@
     min-width: 100%;
 }
 
-.barra-lateral{
+.barra-lateral {
     width: 250px;
     background-color: #1a1a2e;
     color: #fff;
@@ -64,16 +53,16 @@
     padding: 12px 15px;
     border-radius: 6px;
     transition: all 0.3s ease;
-    
+
 }
 
-.menu-vertical a:hover{
+.menu-vertical a:hover {
     background-color: #0f3460;
     color: #fff;
     padding-left: 20px;
 }
 
-.menu-vertical a.ativo{
+.menu-vertical a.ativo {
     font-size: larger;
     background-color: #3495f7;
     color: #fff;
@@ -88,15 +77,11 @@ h1 {
 
 
 
-body{
+body {
     width: 100%;
 }
 
 
-
-
-
-/* Conteúdo Principal */
 main {
     padding: 0px;
     margin: 0px;
@@ -110,16 +95,13 @@ main {
 .botaogeral {
     padding: 12px 25px;
     font-size: 1rem;
-    cursor: pointer;
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: #0f3460;
     color: #fff;
-    transition: background-color 0.3s;
 }
 
 .botaogeral:hover {
-    padding: 12px 25px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 6px;
@@ -128,20 +110,19 @@ main {
     color: #fff;
     transition: background-color 0.3s;
 }
+
 
 .botaorelat {
     padding: 12px 25px;
     font-size: 1rem;
-    cursor: pointer;
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: #0f3460;
     color: #fff;
-    transition: background-color 0.3s;
 }
 
+
 .botaorelat:hover {
-    padding: 12px 25px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 6px;
@@ -150,6 +131,7 @@ main {
     color: #fff;
     transition: background-color 0.3s;
 }
+
 
 
 /*clientes inicio*/
@@ -158,13 +140,17 @@ main {
     color: blue;
     font-weight: bolder;
     font-size: 1.5rem;
-    margin-top: 50px;
+    margin-top: 10px;
     text-align: center;
     list-style: none;
     background-color: var(--bg_divs);
-    border: var(--border-style-solid);
+    /* border: var(--border-style-solid); */
+    border: 4px solid black;
+    /* border-color: black; */
     border-width: 4px;
-    width: 100%;
+    /* width: 100%; */
+
+
 
     #btncadcliente {
         display: flex;
@@ -178,7 +164,6 @@ main {
             flex-direction: column;
         }
     }
-
 }
 
 
@@ -191,6 +176,19 @@ main {
 
 }
 
+.inputcadcl:hover{
+    background-color: #4466fd;
+
+
+}
+.inputcadcl:focus{
+    background-color: #7f94f5;
+    font-size: 1.2rem;
+    color: black;
+
+
+}
+
 /*clientes fim*/
 
 
@@ -199,32 +197,30 @@ main {
 
 #form_cadp {
     color: blue;
-    margin-top: 50px;
+    margin-top: 10px;
     text-align: center;
     list-style: none;
     background-color: var(--bg_divs);
-    border: var(--border-style-solid);
+    border: 4px solid black;
+    font-size: 1.5rem;
+    font-weight: bolder;
+
+
+
 
 
 }
 
 
-/*produtos fim*/
-/* #filtro{
-width: 0.1px;
-} */
-
-
-
-
 
 #compravenda {
     color: blue;
-    margin-top: 50px;
+    margin-top: 10px;
     text-align: center;
     list-style: none;
     background-color: var(--bg_divs);
-    border: var(--border-style-solid);
+    border: 4px solid black;
+
 
 }
 
@@ -236,8 +232,17 @@ width: 0.1px;
     font-size: 1.5rem;
     text-align: center;
     width: 100%;
+    border: 4px solid black;
+
 }
-#txt_rel{
+
+#txt_rel {
     font-size: 2rem;
     color: red;
+}
+
+#listar {
+    text-align: center;
+
+
 }

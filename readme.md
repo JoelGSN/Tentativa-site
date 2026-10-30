@@ -28,6 +28,9 @@ loja de moveis
 
 
 <!-- 
+
+^\s*$\r?\n regex de substituir linhas em branco ctrl + h, habilite o regex e subsitua isso tudo por vazio
+
 # GIT remote -v 'VÊ ONDE ESTÁ VINCULADA'
 # git remote remove origin
 # git remote set-url origin <URL_DO_NOVO_REPOSITORIO>
@@ -37,6 +40,7 @@ loja de moveis
 # git add .
 # git commit -m "dsadsadsa"
 # git push origin main
+
 
 
 # Power shell Habilitar rodar scripts >>>>>
@@ -73,4 +77,4 @@ git push origin main
 
 git remote add origin https://github.com/JoelGSN/newlojamoveis.git
 git pull origin main --rebase
-git push origin main
+git push origin main   

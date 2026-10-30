@@ -59,36 +59,39 @@ function vend() {
 
 
 function relatorio() {
+    
     if (campo.value === "cadcl") {
-
+        let i = 1
         function listarcli() {
-            dadosrl.innerHTML = '\n\n'
+            dadosrl.innerHTML = 'Relatório de Cadastro de Clientes'
             for (let cliente of clientes) {
-                dadosrl.innerHTML += `<p>Nome do Cliente: ${cliente.nome}   ||   CPF: ${cliente.cpf}</p>`
+                dadosrl.innerHTML += `<p><br>${i++}º => Nome do Cliente: ${cliente.nome}   ||   CPF: ${cliente.cpf}</p>`
             }
         }
         listarcli()
     } else {
         if (campo.value === "cadp") {
+            let i = 1
             function listarpdi() {
-                dadosrl.innerHTML = '\n\n'
+                dadosrl.innerHTML = 'Relatório de Cadastro de Produtos'
                 for (let produto of produtos) {
-                    dadosrl.innerHTML += `<p>Nome do Produto: ${produto.nome}   ||   Quantidade: ${produto.quantidade}</p>`
+                    dadosrl.innerHTML += `<p><br>${i++}º => Nome do Produto: ${produto.nome}   ||   Quantidade: ${produto.quantidade}</p>`
                 }
             }
             listarpdi()
         } else {
             if (campo.value === "venda") {
+                let i = 1
                 function listarvd() {
-                    dadosrl.innerHTML = '\n\n'
+                    dadosrl.innerHTML = 'Relatório de Vendas'
                     for (let venda of vendas) {
-                        dadosrl.innerHTML += `<p>Nome do Produto: ${venda.nome}   ||   Quantidade: ${venda.quantidade}</p>`
+                        dadosrl.innerHTML += `<p><br>${i++}º => Nome do Produto: ${venda.nome}   ||   Quantidade: ${venda.quantidade}</p>`
                     }
                 }
                 listarvd()
             } else {
 
-                dadosrl.innerHTML = '<p>Selecione uma opção acima</p>';
+                dadosrl.innerHTML = '<p>Selecione uma opção nos botões acima</p>';
             }
         }
     }

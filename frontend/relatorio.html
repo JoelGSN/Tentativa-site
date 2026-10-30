@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
   <script src="js/app.js" defer></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <div class="layout-site">
     <aside class="barra-lateral">
@@ -21,37 +19,24 @@
         </ul>
       </nav>
     </aside>
-    <!-- Área do Conteúdo Principal -->
     <main>
       <h1>Relatorios</h1>
-      <!-- <img id="logo" src="/frontend/loja_moveis/img/logo.jpg" alt='logo'> -->
       <section>
-        <!-- <aside class="barra-lateral-direita"> -->
-          <!-- <nav> -->
             <ul>
               <button type="button" class="botaorelat" onclick="cadcl()">Cadastro Cliente</button>
               <button type="button" class="botaorelat" onclick="cadp()">Cadastro Produtos</button>
-              <!-- <button type="button" class="botaorelat" onclick="comp()">Compras</button> -->
               <button type="button" class="botaorelat" onclick="vend()">Vendas</button>
               <br>
               <input type="text" id="filtro" placeholder="Clique no botão...">
-
             </ul>
-          <!-- </nav> -->
-        <!-- </aside> -->
-
       </section>
       <br>
       <div id="div_relatorio">
         <p id="txt_rel">{== Relatório de Itens Cadastrados ==}</p>
         <br>
         <div class="principal" id="listar"></div>
-
       </div>
     </main>
-
   </div>
-
 </body>
-
 </html>
