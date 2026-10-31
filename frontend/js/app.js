@@ -124,7 +124,11 @@ function cli() {
 //ABA DE PRODUTOS INICIO
 function pro() {
     // console.log("testando")
-    if (nomep.value.trim() && tipo.value.trim() && cor.value.trim() && preco.value.trim() && quantidade.value.trim()) {
+    if (nomep.value.trim() &&
+        tipo.value.trim() &&
+        cor.value.trim() &&
+        preco.value.trim() &&
+        quantidade.value.trim()) {
         if (preco.value > 0) {
             if (quantidade.value >= 0) {
                 let existe = false
@@ -198,8 +202,8 @@ function alterarcl() {
         }
     }
     localStorage.setItem("clientes", JSON.stringify(clientes))
-    alert("Alteração do Cliente "+nomec.value+" Efetuada Com Sucesso!!!")
-    
+    alert("Alteração do Cliente " + nomec.value + " Efetuada Com Sucesso!!!")
+
 }
 function clidelete() {
     let ind = clientes.findIndex(cliente => cliente.cpf === cpf.value);
