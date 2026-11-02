@@ -28,10 +28,10 @@
 
 /*cor barra*/
 .barra-lateral {
-    width: 150px;
+    width: 250px;
     background-color: #1a1a2e;
     color: #fff;
-    padding: 10px;
+    padding: 30px;
     display: flex;
     margin-right: 1vw;
 }
