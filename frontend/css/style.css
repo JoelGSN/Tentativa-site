@@ -28,10 +28,10 @@
 
 /*cor barra*/
 .barra-lateral {
-    width: 22vw;
+    width: 250px;
     background-color: #1a1a2e;
     color: #fff;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     margin-right: 1vw;
 }
@@ -285,85 +285,4 @@ main {
 }
 #filtro{
     font-size: 0;
-}
-
-/* ========================================================
-   REGRAS PARA DISPOSITIVOS MÓVEIS (CELULARES E TABLETS)
-   ======================================================== */
-@media (max-width: 768px) {
-    /* 1. Menu lateral vai para o topo */
-    .layout-site {
-        flex-direction: column;
-    }
-
-    /* 2. Barra superior adaptada */
-    .barra-lateral {
-        width: 100%;
-        margin-right: 0;
-        padding: 10px;
-    }
-
-    .menu-vertical {
-        width: 100%;
-    }
-
-    .menu-vertical ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px;
-    }
-
-    .menu-vertical a {
-        padding: 8px 10px;
-        font-size: 0.85rem;
-    }
-
-    /* 3. Título ajustado para não vazar da tela */
-    h1 {
-        font-size: 1.25rem;
-        padding: 10px 5px;
-    }
-
-    /* 4. Logo nunca estoura a tela do celular */
-    #logo, img {
-        max-width: 80%;
-        height: auto;
-    }
-
-    /* 5. Inputs com tamanho confortável para toque */
-    .inputcadcl {
-        width: 85%;
-        max-width: 100%;
-        font-size: 1rem;
-    }
-
-    /* 6. Botões empilhados verticalmente e fáceis de clicar */
-    .btncontainer {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    #mid {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .btncontainer .botaogeral,
-    .btncontainer .botaorelat {
-        width: 85%;
-    }
-
-    /* 7. Caixas de formulário e relatórios */
-    #cdclientes,
-    #form_cadp,
-    #compravenda,
-    #div_relatorio {
-        width: 95%;
-        padding: 15px 0;
-    }
 }
