@@ -291,49 +291,79 @@ main {
    REGRAS PARA DISPOSITIVOS MÓVEIS (CELULARES E TABLETS)
    ======================================================== */
 @media (max-width: 768px) {
-    /* 1. Faz o menu lateral ir para cima e o conteúdo para baixo */
+    /* 1. Menu lateral vai para o topo */
     .layout-site {
         flex-direction: column;
     }
-    /* 2. A barra ocupa o topo inteiro em vez de espremer a lateral */
+
+    /* 2. Barra superior adaptada */
     .barra-lateral {
         width: 100%;
         margin-right: 0;
-        padding: 15px 10px;
+        padding: 10px;
     }
-    /* Organiza os botões do menu horizontalmente no topo */
+
+    .menu-vertical {
+        width: 100%;
+    }
+
     .menu-vertical ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
+        gap: 6px;
     }
+
     .menu-vertical a {
-        padding: 8px 12px;
-        font-size: 0.9rem;
+        padding: 8px 10px;
+        font-size: 0.85rem;
     }
-    /* 3. Faz os campos de texto ocuparem 85% do espaço do quadro amarelo */
+
+    /* 3. Título ajustado para não vazar da tela */
+    h1 {
+        font-size: 1.25rem;
+        padding: 10px 5px;
+    }
+
+    /* 4. Logo nunca estoura a tela do celular */
+    #logo, img {
+        max-width: 80%;
+        height: auto;
+    }
+
+    /* 5. Inputs com tamanho confortável para toque */
     .inputcadcl {
         width: 85%;
         max-width: 100%;
         font-size: 1rem;
     }
-    /* 4. Organiza os botões de ação em coluna para caberem e ficarem fáceis de tocar */
+
+    /* 6. Botões empilhados verticalmente e fáceis de clicar */
     .btncontainer {
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
     }
+
+    #mid {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
     .btncontainer .botaogeral,
     .btncontainer .botaorelat {
-        width: 85%; /* Botões largos e fáceis de clicar com o polegar */
+        width: 85%;
     }
-    /* 5. Ajusta o tamanho da área do formulário e relatórios */
+
+    /* 7. Caixas de formulário e relatórios */
     #cdclientes,
     #form_cadp,
     #compravenda,
     #div_relatorio {
         width: 95%;
-        padding: 10px 0;
+        padding: 15px 0;
     }
 }
