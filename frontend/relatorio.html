@@ -20,19 +20,18 @@
       </nav>
     </aside>
     <main>
-      <h1>Relatorios</h1>
-      <section>
-            <ul>
+      <h1>Relatórios</h1>
+      <div class="btncontainer">
               <button type="button" class="botaorelat" onclick="cadcl()">Cadastro Cliente</button>
               <button type="button" class="botaorelat" onclick="cadp()">Cadastro Produtos</button>
               <button type="button" class="botaorelat" onclick="vend()">Vendas</button>
               <br>
-              <input type="text" id="filtro" placeholder="Clique no botão...">
-            </ul>
-      </section>
+              
+      </div>
+      <input type="text" id="filtro" placeholder="Clique no botão...">
       <br>
       <div id="div_relatorio">
-        <p id="txt_rel">{== Relatório de Itens Cadastrados ==}</p>
+        <!-- <p id="txt_rel">{== Relatório de Itens Cadastrados ==}</p> -->
         <br>
         <div class="principal" id="listar"></div>
       </div>

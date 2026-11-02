@@ -27,6 +27,10 @@ loja de moveis
 #validar números negativos de venda
 #validar quantidade em estoque para vender
 
+# css
+o # é usado para ID, o . é para class 
+
+
 
 <!-- 
 

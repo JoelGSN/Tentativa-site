@@ -38,10 +38,10 @@ function cadp() {
     campo.value = "cadp";
     relatorio();
 }
-function comp() {
-    campo.value = "compra";
-    relatorio();
-}
+// function comp() {
+//     campo.value = "compra";
+//     relatorio();
+// }
 function vend() {
     campo.value = "venda";
     relatorio();
@@ -52,7 +52,7 @@ function relatorio() {
     if (campo.value === "cadcl") {
         let i = 1
         function listarcli() {
-            dadosrl.innerHTML = 'Relatório de Cadastro de Clientes'
+            dadosrl.innerHTML = `<p  id="relatcadcl">=======================================> Relatório de Cadastro de Clientes <=======================================</p><br><br>`
             for (let cliente of clientes) {
                 dadosrl.innerHTML += `<p><br>${i++}º => Nome do Cliente: ${cliente.nome}   ||   CPF: ${cliente.cpf}</p>`
             }
@@ -62,9 +62,17 @@ function relatorio() {
         if (campo.value === "cadp") {
             let i = 1
             function listarpdi() {
-                dadosrl.innerHTML = 'Relatório de Cadastro de Produtos'
+                dadosrl.innerHTML = `<p  id="relatcadp">=======================================> Relatório de Cadastro de Produtos <=======================================</p><br><br>`
                 for (let produto of produtos) {
-                    dadosrl.innerHTML += `<p><br>${i++}º => Nome do Produto: ${produto.nome}   ||   Quantidade: ${produto.quantidade}  || Valor Produto: ${produto.preco}</p>`
+                    let tt_vendas = 0
+                    for (let venda of vendas) {
+                        if (venda.nome == produto.nome) {
+                            tt_vendas += Number(venda.quantidade)
+                            console.log(Number(tt_vendas))
+                        }
+                    }
+
+                    dadosrl.innerHTML += `<p><br>${i++}º => Produto: ${produto.nome}   ||   Quantidade Estoque: ${produto.quantidade} Un   || Valor Produto: R$ ${produto.preco}   || Total Vendido: ${tt_vendas} Un</p>`
                 }
             }
             listarpdi()
@@ -72,10 +80,20 @@ function relatorio() {
             if (campo.value === "venda") {
                 let i = 1
                 function listarvd() {
-                    dadosrl.innerHTML = 'Relatório de Vendas'
+                    dadosrl.innerHTML = `<p  id="relatvenda">=============================================> Relatório de Vendas <=============================================</p><br><br>`
                     for (let venda of vendas) {
-                        dadosrl.innerHTML += `<p><br>${i++}º => Nome do Produto: ${venda.nome}   ||   Quantidade: ${venda.quantidade}</p>`
+                        let precopd = 0
+                        for (let produto of produtos) {
+                            if (produto.nome == venda.nome) {
+
+                                precopd = Number(produto.preco)
+                                break
+                            }
+                        }
+
+                        dadosrl.innerHTML += `<p><br>${i++}º => Produto: ${venda.nome}   ||   Qtd: ${venda.quantidade} Un || Preço: R$ ${precopd} || Total Da Venda : R$${venda.quantidade * precopd}</p>`
                     }
+                    
                 }
                 listarvd()
             } else {
@@ -91,7 +109,8 @@ relatorio()
 function cli() {
     if (nomec.value.trim() && cpf.value.trim() && rua.value.trim() && numero.value.trim() && uf.value.trim) {
         if (/^[A-Za-zÁ-ý\s]+$/.test(nomec.value)) {
-            if (/^\d{11}$/.test(cpf.value)) {
+            if (/^\d{11}$/.test(cpf.value) || /^\d{14}$/.test(cpf.value)) {
+
                 let existe = false
                 for (let cliente of clientes) {
                     if (cliente.cpf == cpf.value)
@@ -108,10 +127,24 @@ function cli() {
                     clientes.push(cliente)
                     localStorage.setItem("clientes", JSON.stringify(clientes))
                     alert("Cadastro Efetuado com Sucesso!!")
-                } else alert("Cliente já foi cadastrado!")
-            } else alert("deve conter apenas 11 digitos caso for CPF ou 14 digitos caso for CNPJ")
-        } else alert("Nome so Aceita Letras , acentos e Espaço!")
-    } else alert("Preencha todos os campos!")
+
+                    nomec.value = "";
+                    cpf.value = "";
+                    rua.value = "";
+                    numero.value = "";
+                    uf.value = "";
+                } else {
+                    alert("Cliente já foi cadastrado!")
+                }
+            } else {
+                alert("deve conter apenas 11 digitos caso for CPF ou 14 digitos caso for CNPJ")
+            }
+        } else {
+            alert("Nome so Aceita Letras , acentos e Espaço!")
+        }
+    } else {
+        alert("Preencha todos os campos!")
+    }
     listar()
 }
 // function listarcl() {
@@ -203,6 +236,12 @@ function alterarcl() {
     }
     localStorage.setItem("clientes", JSON.stringify(clientes))
     alert("Alteração do Cliente " + nomec.value + " Efetuada Com Sucesso!!!")
+    nomec.value = "";
+    cpf.value = "";
+    rua.value = "";
+    numero.value = "";
+    uf.value = "";
+
 
 }
 function clidelete() {
@@ -210,6 +249,12 @@ function clidelete() {
     if (ind !== -1) {
         clientes.splice(ind, 1);
         localStorage.setItem("clientes", JSON.stringify(clientes));
+        nomec.value = "";
+        cpf.value = "";
+        rua.value = "";
+        numero.value = "";
+        uf.value = "";
+
         alert("Cliente excluído com sucesso!");
     } else {
         alert("Cliente não encontrado!");
@@ -222,6 +267,10 @@ function comprapd() {
     let existe = false
     let vlrsoma = Number(qtdcv.value)
     let qtd_novo = 0
+    if (nmcv.value == "" || qtdcv.value == "") {
+        alert("Preencher devidamente os campos!!")
+        return
+    }
     if (vlrsoma > 0) {
         for (let produto of produtos) {
             if (produto.nome === nmcv.value) {
@@ -244,34 +293,49 @@ function comprapd() {
 }
 function venderpd() {
     let existe = false;
-    let vlrsoma = qtdcv.value
+    let vlrsoma = Number(qtdcv.value)
     let qtd_novo = 0;
+
+    if (nmcv.value == "" || qtdcv.value == "") {
+        alert("Preencher devidamente os campos!!")
+        return
+    }
     if (vlrsoma > 0) {
-        if (produto.quantidade > vlrsoma) {
-            for (let produto of produtos) {
-                if (produto.nome === nmcv.value) {
-                    existe = true;
-                    produto.quantidade = produto.quantidade - vlrsoma
+
+
+
+
+
+
+        for (let produto of produtos) {
+            if (produto.nome === nmcv.value) {
+                existe = true;
+                if (produto.quantidade > vlrsoma) {
+
+                    produto.quantidade = Number(produto.quantidade) - vlrsoma
                     qtd_novo = produto.quantidade;
                     break;
-                    //
+                } else {
+                    alert("Quantidade Indisponível para venda")
                 }
             }
-            if (existe) {
-                const venda = {
-                    nome: nomev.value,
-                    quantidade: quantidadev.value
-                }
-                vendas.push(venda)
-                localStorage.setItem("vendas", JSON.stringify(vendas))
-                localStorage.setItem("produtos", JSON.stringify(produtos));
-                // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
-                alert("Venda Executada!! Novo Estoque: " + qtd_novo);
-            } else {
-                alert("Produto não encontrado!");
+        }
+        if (existe) {
+            // if (produto.quantidade > vlrsoma) {
+            const venda = {
+                nome: nomev.value,
+                quantidade: quantidadev.value
             }
+            vendas.push(venda)
+            localStorage.setItem("vendas", JSON.stringify(vendas))
+            localStorage.setItem("produtos", JSON.stringify(produtos));
+            // alert("Alterado de "+qtd_antiga+" para "+ idpd.value+" ou "+produto.quantidade);
+            alert("Venda Executada!! Novo Estoque: " + qtd_novo);
+            // } else {
+            //     alert("Quantidade Indisponível para venda")
+            // }
         } else {
-            alert("Quantidade Indisponível para venda")
+            alert("Produto não encontrado!");
         }
     } else {
         alert("Impossível Vender Valor negativo!")

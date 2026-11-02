@@ -22,20 +22,20 @@
     <main>
       <h1>Menu de Cadastro | Alterações</h1>
       <form id="form_cadp">
-          <li><a>Cadastro de Produto</a></li>
+          <li><a class="nome_inputs">Cadastro de Produto</a></li>
           <input class="inputcadcl" id='nomep' type="text">
-          <li><a>Tipo do Produto</a></li>
+          <li><a class="nome_inputs">Tipo do Produto</a></li>
           <input class="inputcadcl" id='tipo' type="text">
-          <li><a>Cor do Produto</a></li>
+          <li><a class="nome_inputs">Cor do Produto</a></li>
           <input class="inputcadcl" id='cor' type="text">
-          <li><a>Preco</a></li>
+          <li><a class="nome_inputs">Preco</a></li>
           <input class="inputcadcl" id='preco' type="text">
-          <li><a>Quantidade</a></li>
+          <li><a class="nome_inputs">Quantidade</a></li>
           <input class="inputcadcl" id='quantidade' type="text">
           <br>
           <br>
           <br>
-          <section id="btncadcliente">
+          <section class="btncontainer">
             <button type="button" class="botaogeral" onclick="pro()">Cadastrar Produto</button>
           </section>
       </form>
@@ -43,14 +43,15 @@
       <h2>Compra de Produto | Venda de Produto</h2>
       <form id="compravenda">
         <br>
-          <li><a>Nome do Produto</a></li>
+          <li><a class="nome_inputs">Nome do Produto</a></li>
           <input class="inputcadcl" id='nomecv' type="text">
-          <li><a>Quantidade</a></li>
+          <li><a class="nome_inputs">Quantidade</a></li>
           <input class="inputcadcl" id='quantidadecv' type="number">
           <br>
           <br>
           <br>
-          <section>
+          
+          <section class="btncontainer">
             <button type="button" class="botaogeral" onclick="comprapd()">Comprar Produto</button>
             <button type="button" class="botaogeral" onclick="venderpd()">Vender Produto</button>
           </section>
