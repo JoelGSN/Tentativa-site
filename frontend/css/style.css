@@ -16,7 +16,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
@@ -28,10 +28,10 @@
 
 /*cor barra*/
 .barra-lateral {
-    width: 250px;
+    width: 150px;
     background-color: #1a1a2e;
     color: #fff;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     margin-right: 1vw;
 }
@@ -285,4 +285,55 @@ main {
 }
 #filtro{
     font-size: 0;
+}
+
+/* ========================================================
+   REGRAS PARA DISPOSITIVOS MÓVEIS (CELULARES E TABLETS)
+   ======================================================== */
+@media (max-width: 768px) {
+    /* 1. Faz o menu lateral ir para cima e o conteúdo para baixo */
+    .layout-site {
+        flex-direction: column;
+    }
+    /* 2. A barra ocupa o topo inteiro em vez de espremer a lateral */
+    .barra-lateral {
+        width: 100%;
+        margin-right: 0;
+        padding: 15px 10px;
+    }
+    /* Organiza os botões do menu horizontalmente no topo */
+    .menu-vertical ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    .menu-vertical a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    /* 3. Faz os campos de texto ocuparem 85% do espaço do quadro amarelo */
+    .inputcadcl {
+        width: 85%;
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    /* 4. Organiza os botões de ação em coluna para caberem e ficarem fáceis de tocar */
+    .btncontainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .btncontainer .botaogeral,
+    .btncontainer .botaorelat {
+        width: 85%; /* Botões largos e fáceis de clicar com o polegar */
+    }
+    /* 5. Ajusta o tamanho da área do formulário e relatórios */
+    #cdclientes,
+    #form_cadp,
+    #compravenda,
+    #div_relatorio {
+        width: 95%;
+        padding: 10px 0;
+    }
 }
