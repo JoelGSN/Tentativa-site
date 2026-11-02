@@ -80,6 +80,6 @@ git push origin main
 
 
 
-git remote add origin https://github.com/JoelGSN/newlojamoveis.git
+git remote add origin https://github.com/JoelGSN/Tentativa-site.git
 git pull origin main --rebase
 git push origin main   
